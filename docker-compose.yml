@@ -17,3 +17,8 @@ services:
      - portainer_default
     depends_on:
       - db
+
+networks:
+  portainer_default:
+    external:
+      portainer_default
