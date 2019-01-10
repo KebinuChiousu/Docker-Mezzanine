@@ -21,4 +21,4 @@ services:
 networks:
   portainer_default:
     external:
-      portainer_default
+      name: portainer_default
