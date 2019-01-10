@@ -4,6 +4,8 @@ services:
     image: postgres
     volumes:
       - ./datavolume:/var/lib/postgresql
+    networks:
+      - portainer_default
   web:
     build: .
     command: python manage.py runserver 0.0.0.0:8000
@@ -11,5 +13,7 @@ services:
       - .:/code
     ports:
       - "8000:8000"
+    networks:
+     - portainer_default
     depends_on:
       - db
